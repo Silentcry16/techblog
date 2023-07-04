@@ -53,44 +53,91 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
+            //Blog list
             Container(
               width: size.width,
-              height: size.height * 0.32,
-              // color: Colors.amber,
+              height: size.height / 4.1,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: blogList.length,
                 itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    width: size.width * 0.45,
-                    // height: 50,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          width: size.width * 0.45,
-                          height: size.height / 5,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(16),
-                            child: Image.network(
-                              blogList[index].imageUrl,
-                              fit: BoxFit.cover,
+                  child: Padding(
+                    padding:
+                        EdgeInsets.only(right: index == 0 ? bodyMargin : 0),
+                    child: SizedBox(
+                      width: size.width * 0.45,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            width: size.width / 2.4,
+                            height: size.height / 5.3,
+                            child: Stack(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      image: DecorationImage(
+                                          image: NetworkImage(
+                                              blogList[index].imageUrl),
+                                          fit: BoxFit.cover)),
+                                  foregroundDecoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(16),
+                                    gradient: const LinearGradient(
+                                        begin: Alignment.bottomCenter,
+                                        end: Alignment.topCenter,
+                                        colors: GradientColors.blogPost),
+                                  ),
+                                ),
+                                Positioned(
+                                  bottom: 5,
+                                  right: 8,
+                                  child: CustomText(
+                                    text: blogList[index].writer,
+                                    size: 14,
+                                    textColor: SolidColors.lightText,
+                                    weight: FontWeight.w300,
+                                  ),
+                                ),
+                                Positioned(
+                                  bottom: 5,
+                                  left: 8,
+                                  child: Row(
+                                    children: [
+                                      CustomText(
+                                        text: HomePagePosterMap['view'],
+                                        size: 14,
+                                        textColor: SolidColors.lightText,
+                                        weight: FontWeight.w300,
+                                      ),
+                                      const SizedBox(
+                                        width: 3,
+                                      ),
+                                      const Icon(
+                                        Icons.remove_red_eye_sharp,
+                                        size: 14,
+                                        color: SolidColors.lightIcon,
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        CustomText(
-                          text: blogList[index].content,
-                          size: 14,
-                          textColor: SolidColors.textTitle,
-                          weight: FontWeight.bold,
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 2,
-                        )
-                      ],
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          CustomText(
+                            text: blogList[index].content,
+                            size: 14,
+                            textColor: SolidColors.textTitle,
+                            weight: FontWeight.bold,
+                            overflow: TextOverflow.ellipsis,
+                            // maxLines: 2,
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
