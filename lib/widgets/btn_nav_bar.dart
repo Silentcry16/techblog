@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tech_blog/view/home_screen.dart';
-import 'package:tech_blog/view/profile_screen.dart';
 
 import '../constant/my_colors.dart';
 import '../gen/assets.gen.dart';
 
+// ignore: must_be_immutable
 class BtnNavBar extends StatefulWidget {
   BtnNavBar({
     super.key,
@@ -51,7 +50,7 @@ class _BtnNavBarState extends State<BtnNavBar> {
                 child: IconButton(
                     onPressed: () {
                       setState(() {
-                        widget.selectedIndex = indexList.homeIndex;
+                        widget.selectedIndex = IndexList.homeIndex;
                       });
                       widget.onIndexChanged(widget.selectedIndex);
                     },
@@ -64,7 +63,7 @@ class _BtnNavBarState extends State<BtnNavBar> {
                 child: IconButton(
                     onPressed: () {
                       setState(() {
-                        widget.selectedIndex = indexList.newPostIndex;
+                        widget.selectedIndex = IndexList.newPostIndex;
                       });
                       widget.onIndexChanged(widget.selectedIndex);
                     },
@@ -77,7 +76,7 @@ class _BtnNavBarState extends State<BtnNavBar> {
                 child: IconButton(
                     onPressed: () {
                       setState(() {
-                        widget.selectedIndex = indexList.profileIndex;
+                        widget.selectedIndex = IndexList.profileIndex;
                       });
                       widget.onIndexChanged(widget.selectedIndex);
                     },
@@ -94,8 +93,8 @@ class _BtnNavBarState extends State<BtnNavBar> {
   }
 }
 
-class indexList {
-  indexList._();
+class IndexList {
+  IndexList._();
 
   static const homeIndex = 0;
   static const profileIndex = 1;

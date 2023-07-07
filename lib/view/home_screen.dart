@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       child: Column(
         children: [
           //Poster
@@ -47,7 +47,7 @@ class HomeScreen extends StatelessWidget {
           //Blog list
           BlogPostList(size: size, bodyMargin: bodyMargin),
           const SizedBox(
-            height: 16,
+            height: 30,
           ),
           IconTitle(
             bodyMargin: bodyMargin,

@@ -16,7 +16,7 @@ class PostCastList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: size.width,
       height: size.height / 3.7,
       child: ListView.builder(

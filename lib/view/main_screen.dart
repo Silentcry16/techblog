@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tech_blog/constant/my_colors.dart';
 import 'package:tech_blog/view/profile_screen.dart';
+import 'package:tech_blog/view/register_intro_.dart';
 
 import '../widgets/btn_nav_bar.dart';
 import '../widgets/custom_app_bar.dart';
@@ -8,7 +9,7 @@ import 'home_screen.dart';
 
 // ignore: must_be_immutable
 class MainScreen extends StatefulWidget {
-  MainScreen({super.key});
+  const MainScreen({super.key});
 
   @override
   State<MainScreen> createState() => _MainScreenState();
@@ -42,7 +43,8 @@ class _MainScreenState extends State<MainScreen> {
             index: selectedIndex,
             children: [
               HomeScreen(size: size, bodyMargin: bodyMargin),
-              ProfileScreen(size: size, bodyMargin: bodyMargin)
+              ProfileScreen(size: size, bodyMargin: bodyMargin),
+              RegisterIntro()
             ],
           ),
           Positioned(

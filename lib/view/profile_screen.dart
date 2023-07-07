@@ -43,7 +43,7 @@ class ProfileScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 60,
+              height: 45,
             ),
             CustomText(
                 text: 'محمد بوستانی',
@@ -66,7 +66,7 @@ class ProfileScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
               onTap: () {},
               splashColor: SolidColors.primaryColor.withOpacity(0.5),
-              child: Container(
+              child: SizedBox(
                 width: size.width / 1.5,
                 height: 45,
                 child: Center(
@@ -102,7 +102,7 @@ class ProfileScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
               onTap: () {},
               splashColor: SolidColors.primaryColor.withOpacity(0.5),
-              child: Container(
+              child: SizedBox(
                 width: size.width / 1.5,
                 height: 45,
                 child: Center(

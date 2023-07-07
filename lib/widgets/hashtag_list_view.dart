@@ -17,7 +17,7 @@ class HashtagListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       // margin: const EdgeInsets.only(right: 30),
       width: size.width,
       height: size.height * 0.05,
