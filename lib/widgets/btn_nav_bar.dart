@@ -26,7 +26,7 @@ class _BtnNavBarState extends State<BtnNavBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: widget.size.height / 10,
+      height: widget.size.height * 0.07,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
             colors: GradientColors.bottomNavBackground,

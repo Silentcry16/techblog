@@ -36,9 +36,10 @@ class RegisterIntro extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(top: Dimens.medium),
             child: ElevatedButton(
-                style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStatePropertyAll(SolidColors.primaryColor)),
+                style: const ButtonStyle(
+                  backgroundColor:
+                      MaterialStatePropertyAll(SolidColors.primaryColor),
+                ),
                 onPressed: () {},
                 child: CustomText(
                     text: MyStrings.letsGo,
