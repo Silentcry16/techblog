@@ -18,6 +18,7 @@ class HomeScreen extends StatelessWidget {
   });
 
   final Size size;
+
   final double bodyMargin;
 
   @override
@@ -38,6 +39,7 @@ class HomeScreen extends StatelessWidget {
           ),
           //newest blog posts title (see more)
           IconTitle(
+            bodyMargin: bodyMargin,
             size: size,
             text: MyStrings.viewHotestBlog,
             icon: Assets.icons.bluePen.path,
@@ -48,6 +50,7 @@ class HomeScreen extends StatelessWidget {
             height: 16,
           ),
           IconTitle(
+            bodyMargin: bodyMargin,
             size: size,
             text: MyStrings.viewHotestPodCasts,
             icon: Assets.icons.microphon.path,

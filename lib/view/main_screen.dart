@@ -7,8 +7,22 @@ import '../widgets/custom_app_bar.dart';
 import 'home_screen.dart';
 
 // ignore: must_be_immutable
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
   MainScreen({super.key});
+
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  int selectedIndex = 0;
+
+  void handleIndexChanged(int newIndex) {
+    setState(() {
+      selectedIndex = newIndex;
+    });
+    // Perform any additional logic or actions based on the new index
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,19 +37,21 @@ class MainScreen extends StatelessWidget {
       body: Stack(
         children: [
           // HomeScreen(size: size, bodyMargin: bodyMargin),
-          Center(
-            child: Positioned.fill(
-              child: ProfileScreen(
-                size: size,
-                bodyMargin: bodyMargin,
-              ),
-            ),
+
+          IndexedStack(
+            index: selectedIndex,
+            children: [
+              HomeScreen(size: size, bodyMargin: bodyMargin),
+              ProfileScreen(size: size, bodyMargin: bodyMargin)
+            ],
           ),
           Positioned(
             bottom: 0,
             left: 0,
             right: 0,
             child: BtnNavBar(
+              selectedIndex: selectedIndex,
+              onIndexChanged: handleIndexChanged,
               size: size,
               bodyMargin: bodyMargin,
             ),

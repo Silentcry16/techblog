@@ -5,20 +5,29 @@ import 'package:tech_blog/view/profile_screen.dart';
 import '../constant/my_colors.dart';
 import '../gen/assets.gen.dart';
 
-class BtnNavBar extends StatelessWidget {
-  const BtnNavBar({
+class BtnNavBar extends StatefulWidget {
+  BtnNavBar({
     super.key,
     required this.size,
     required this.bodyMargin,
+    required this.selectedIndex,
+    required this.onIndexChanged,
   });
 
   final Size size;
   final double bodyMargin;
+  int selectedIndex;
+  final Function(int) onIndexChanged;
 
+  @override
+  State<BtnNavBar> createState() => _BtnNavBarState();
+}
+
+class _BtnNavBarState extends State<BtnNavBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: size.height / 10,
+      height: widget.size.height / 10,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
             colors: GradientColors.bottomNavBackground,
@@ -26,9 +35,9 @@ class BtnNavBar extends StatelessWidget {
             begin: Alignment.topCenter),
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: bodyMargin),
+        padding: EdgeInsets.symmetric(horizontal: widget.bodyMargin),
         child: Container(
-          height: size.height / 12,
+          height: widget.size.height / 12,
           decoration: BoxDecoration(
             borderRadius: BorderRadiusDirectional.circular(18),
             gradient: const LinearGradient(
@@ -40,7 +49,12 @@ class BtnNavBar extends StatelessWidget {
             children: [
               Expanded(
                 child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        widget.selectedIndex = indexList.homeIndex;
+                      });
+                      widget.onIndexChanged(widget.selectedIndex);
+                    },
                     icon: ImageIcon(
                       AssetImage(Assets.icons.home.path),
                       color: SolidColors.lightIcon,
@@ -48,7 +62,12 @@ class BtnNavBar extends StatelessWidget {
               ),
               Expanded(
                 child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        widget.selectedIndex = indexList.newPostIndex;
+                      });
+                      widget.onIndexChanged(widget.selectedIndex);
+                    },
                     icon: ImageIcon(
                       AssetImage(Assets.icons.write.path),
                       color: SolidColors.lightIcon,
@@ -56,7 +75,12 @@ class BtnNavBar extends StatelessWidget {
               ),
               Expanded(
                 child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        widget.selectedIndex = indexList.profileIndex;
+                      });
+                      widget.onIndexChanged(widget.selectedIndex);
+                    },
                     icon: ImageIcon(
                       AssetImage(Assets.icons.user.path),
                       color: SolidColors.lightIcon,
@@ -68,4 +92,12 @@ class BtnNavBar extends StatelessWidget {
       ),
     );
   }
+}
+
+class indexList {
+  indexList._();
+
+  static const homeIndex = 0;
+  static const profileIndex = 1;
+  static const newPostIndex = 2;
 }
