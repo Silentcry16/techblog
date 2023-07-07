@@ -23,6 +23,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
       child: Column(
         children: [
           //Poster
@@ -37,7 +38,6 @@ class HomeScreen extends StatelessWidget {
           ),
           //newest blog posts title (see more)
           IconTitle(
-            bodyMargin: bodyMargin,
             size: size,
             text: MyStrings.viewHotestBlog,
             icon: Assets.icons.bluePen.path,
@@ -48,7 +48,6 @@ class HomeScreen extends StatelessWidget {
             height: 16,
           ),
           IconTitle(
-            bodyMargin: bodyMargin,
             size: size,
             text: MyStrings.viewHotestPodCasts,
             icon: Assets.icons.microphon.path,

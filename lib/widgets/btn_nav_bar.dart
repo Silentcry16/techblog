@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tech_blog/view/home_screen.dart';
+import 'package:tech_blog/view/profile_screen.dart';
 
 import '../constant/my_colors.dart';
 import '../gen/assets.gen.dart';

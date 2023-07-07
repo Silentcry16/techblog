@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tech_blog/constant/my_colors.dart';
+import 'package:tech_blog/view/profile_screen.dart';
 
 import '../widgets/btn_nav_bar.dart';
 import '../widgets/custom_app_bar.dart';
@@ -21,7 +22,15 @@ class MainScreen extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          HomeScreen(size: size, bodyMargin: bodyMargin),
+          // HomeScreen(size: size, bodyMargin: bodyMargin),
+          Center(
+            child: Positioned.fill(
+              child: ProfileScreen(
+                size: size,
+                bodyMargin: bodyMargin,
+              ),
+            ),
+          ),
           Positioned(
             bottom: 0,
             left: 0,
