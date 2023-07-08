@@ -38,7 +38,7 @@ class ProfileScreen extends StatelessWidget {
                   bottomRight: Radius.circular(95),
                   bottomLeft: Radius.circular(95),
                 )),
-            height: size.height / 4.5,
+            height: size.height / 4,
             child: Column(
               children: [
                 const SizedBox(

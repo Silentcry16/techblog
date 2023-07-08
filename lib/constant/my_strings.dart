@@ -97,7 +97,7 @@ www.sasansafari.com
       "فرمت ایمیل درست نمیباشد, لطفا ایمیل خود را به درستی وارد کنید";
   static String selectAudioFile = "انتخاب فابل صوتی";
   static String enterNumber = "Enter Number";
-  static String continuation = "ادامه";
+  static String continuebtn = "ادامه";
   static String letsGo = "بزن بریم";
   static String stars = "******";
   static String nameAndFamilyName = "نام و نام خانوادگی";
