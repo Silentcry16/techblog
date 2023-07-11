@@ -26,6 +26,7 @@ List<HashtagModel> hashtagData = [
   HashtagModel(title: 'تست نرم‌افزار'),
   HashtagModel(title: 'بانک‌های اطلاعاتی'),
 ];
+List<HashtagModel> myCats = [];
 
 //List of blogs
 List<BlogModel> blogList = [

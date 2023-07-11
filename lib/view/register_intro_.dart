@@ -20,10 +20,80 @@ class RegisterIntro extends StatefulWidget {
 }
 
 class _RegisterIntroState extends State<RegisterIntro> {
-  TextEditingController emailcontroller = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController activateCodeController = TextEditingController();
   var size = Get.size;
   bool emailCheck = false;
+
   void _showBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      isScrollControlled: true,
+      context: context,
+      builder: (BuildContext context) {
+        return Padding(
+          padding:
+              EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+          child: Container(
+            padding: EdgeInsets.all(24),
+            height: size.height / 2.8,
+            child: Column(
+              children: [
+                CustomText(
+                  text: MyStrings.insertYourEmail,
+                  size: 14,
+                  textColor: SolidColors.blackColor,
+                  weight: FontWeight.bold,
+                ),
+                const SizedBox(height: 20),
+                TextField(
+                  controller: emailController,
+                  onChanged: (val) {
+                    emailCheck = isEmail(val);
+                  },
+                  autofocus: true,
+                  textAlign: TextAlign.center,
+                  textAlignVertical: TextAlignVertical.center,
+                  decoration: InputDecoration(
+                    hintText: 'Example@mail.com',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 5),
+                SizedBox(
+                  width: 150,
+                  child: ElevatedButton(
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                        SolidColors.primaryColor,
+                      ),
+                    ),
+                    onPressed: () {
+                      if (emailCheck == true) {
+                        Get.back();
+                        activateBottomSheet(context);
+                      } else {
+                        return;
+                      }
+                    },
+                    child: CustomText(
+                      text: MyStrings.continuebtn,
+                      size: 14,
+                      textColor: SolidColors.lightText,
+                      weight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  void activateBottomSheet(BuildContext context) {
     showModalBottomSheet(
       isScrollControlled: true,
       context: context,
@@ -37,24 +107,20 @@ class _RegisterIntroState extends State<RegisterIntro> {
             child: Column(
               children: [
                 CustomText(
-                  text: MyStrings.insertYourEmail,
+                  text: MyStrings.activateCode,
                   size: 14,
                   textColor: SolidColors.blackColor,
                   weight: FontWeight.bold,
                 ),
                 const SizedBox(height: 20),
                 TextField(
-                  controller: emailcontroller,
-                  onChanged: (val) {
-                    setState(() {
-                      emailCheck != isEmail(val);
-                    });
-                  },
+                  controller: activateCodeController,
+                  onChanged: (val) {},
                   autofocus: true,
                   textAlign: TextAlign.center,
                   textAlignVertical: TextAlignVertical.center,
                   decoration: InputDecoration(
-                    hintText: 'Example@mail.com',
+                    hintText: '******',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),
@@ -92,11 +158,8 @@ class _RegisterIntroState extends State<RegisterIntro> {
     return Scaffold(
         body: Center(
       child: Column(
-        // mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(
-            height: size.height * 0.2,
-          ),
           SvgPicture.asset(
             Assets.images.tcbot,
             height: Dimens.xlarge + 36,
