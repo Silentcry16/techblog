@@ -76,7 +76,7 @@ class _MyCatsState extends State<MyCats> {
               const SizedBox(
                 height: 15,
               ),
-              //tag list
+              //tags list
               Padding(
                 padding: const EdgeInsets.all(2),
                 child: SizedBox(
@@ -95,12 +95,13 @@ class _MyCatsState extends State<MyCats> {
                       return Padding(
                         padding: const EdgeInsets.all(5),
                         child: InkWell(
-                          splashColor: Colors.black,
-                          borderRadius: BorderRadius.circular(16),
                           onTap: () {
                             setState(() {
-                              myCats.add(HashtagModel(
-                                  title: hashtagData[index].title));
+                              if (!myCats.contains(hashtagData[index])) {
+                                myCats.add(hashtagData[index]);
+                              } else {
+                                debugPrint("${hashtagData[index].title} exist");
+                              }
                             });
                           },
                           child: Container(
@@ -148,7 +149,8 @@ class _MyCatsState extends State<MyCats> {
               const SizedBox(
                 height: 50,
               ),
-              // subtags
+
+              // Selected Tags List
               Padding(
                 padding: const EdgeInsets.all(2),
                 child: SizedBox(
