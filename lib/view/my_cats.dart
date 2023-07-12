@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:tech_blog/gen/assets.gen.dart';
 import 'package:tech_blog/model/fake_data.dart';
 import 'package:tech_blog/model/hashtag_model.dart';
@@ -94,6 +95,8 @@ class _MyCatsState extends State<MyCats> {
                       return Padding(
                         padding: const EdgeInsets.all(5),
                         child: InkWell(
+                          splashColor: Colors.black,
+                          borderRadius: BorderRadius.circular(16),
                           onTap: () {
                             setState(() {
                               myCats.add(HashtagModel(
@@ -142,18 +145,21 @@ class _MyCatsState extends State<MyCats> {
                 Assets.icons.downCatArrow.path,
                 scale: 3,
               ),
+              const SizedBox(
+                height: 50,
+              ),
               // subtags
               Padding(
                 padding: const EdgeInsets.all(2),
                 child: SizedBox(
-                  height: 60,
+                  height: 100,
                   width: double.infinity,
                   child: GridView.builder(
                     physics: const ClampingScrollPhysics(),
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 1,
-                      childAspectRatio: 0.4,
+                      crossAxisCount: 2,
+                      childAspectRatio: 0.25,
                     ),
                     scrollDirection: Axis.horizontal,
                     itemCount: myCats.length,
@@ -162,32 +168,32 @@ class _MyCatsState extends State<MyCats> {
                         padding: const EdgeInsets.all(5),
                         child: Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16),
-                            gradient: const LinearGradient(
-                                colors: GradientColors.tags,
-                                begin: Alignment.centerRight,
-                                end: Alignment.centerLeft),
-                          ),
+                              borderRadius: BorderRadius.circular(16),
+                              color: SolidColors.surface),
                           child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: SizedBox(
-                                width: 180,
-                                child: Row(
-                                  // mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    CustomText(
-                                        text: '#',
-                                        size: 12,
-                                        textColor: SolidColors.lightText,
-                                        weight: FontWeight.bold),
-                                    CustomText(
-                                        text: myCats[index].title,
-                                        size: 12,
-                                        textColor: SolidColors.lightText,
-                                        weight: FontWeight.bold),
-                                  ],
-                                ),
+                            child: SizedBox(
+                              width: 180,
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  CustomText(
+                                      text: myCats[index].title,
+                                      size: 12,
+                                      textColor: SolidColors.blackColor,
+                                      weight: FontWeight.bold),
+                                  IconButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        myCats.removeAt(index);
+                                      });
+                                    },
+                                    icon: const Icon(
+                                      (Icons.delete),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
