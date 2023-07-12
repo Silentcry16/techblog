@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:tech_blog/constant/my_colors.dart';
+import 'package:tech_blog/constant/my_strings.dart';
+import 'package:tech_blog/gen/assets.gen.dart';
 import 'package:tech_blog/view/profile_screen.dart';
 import 'package:tech_blog/view/register_intro_.dart';
+import 'package:tech_blog/widgets/custom_drawer.dart';
 
 import '../widgets/btn_nav_bar.dart';
 import '../widgets/custom_app_bar.dart';
+import '../widgets/custom_text.dart';
 import 'home_screen.dart';
 
 // ignore: must_be_immutable
@@ -35,10 +39,10 @@ class _MainScreenState extends State<MainScreen> {
         backgroundColor: SolidColors.scaffoldBg,
         title: CustomAppBar(size: size),
       ),
+      drawer: CustomDrawer(size: size),
+      // drawer: CustomDrawer(size: size),
       body: Stack(
         children: [
-          // HomeScreen(size: size, bodyMargin: bodyMargin),
-
           IndexedStack(
             index: selectedIndex,
             children: [
@@ -48,7 +52,7 @@ class _MainScreenState extends State<MainScreen> {
             ],
           ),
           Positioned(
-            bottom: 0,
+            bottom: 8,
             left: 0,
             right: 0,
             child: BtnNavBar(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:tech_blog/view/main_screen.dart';
 import 'package:tech_blog/view/my_cats.dart';
 import 'package:tech_blog/view/register_intro_.dart';
 import 'package:tech_blog/view/splash_screen.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyCats(),
+      home: const MainScreen(),
     );
   }
 }

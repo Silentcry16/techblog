@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tech_blog/widgets/custom_drawer.dart';
 
 import '../gen/assets.gen.dart';
 
@@ -16,7 +17,11 @@ class CustomAppBar extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        IconButton(onPressed: () {}, icon: const Icon(Icons.list)),
+        IconButton(
+            onPressed: () {
+              CustomDrawer(size: size);
+            },
+            icon: const Icon(Icons.list)),
         Image.asset(
           Assets.images.logo.path,
           height: size.height / 13.6,
