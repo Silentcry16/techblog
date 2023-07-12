@@ -205,6 +205,22 @@ class _MyCatsState extends State<MyCats> {
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 30,
+              ),
+              Container(
+                width: 120,
+                height: 50,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                    color: SolidColors.primaryColor,
+                    borderRadius: BorderRadius.circular(10)),
+                child: CustomText(
+                    text: 'ادامه',
+                    size: 12,
+                    textColor: SolidColors.lightText,
+                    weight: FontWeight.bold),
+              ),
             ],
           ),
         ),
