@@ -20,7 +20,7 @@ class CustomDrawer extends StatelessWidget {
       child: ListView(
         children: [
           DrawerHeader(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 color: SolidColors.scaffoldBg,
                 border:
                     Border(bottom: BorderSide(color: SolidColors.scaffoldBg))),
@@ -38,6 +38,7 @@ class CustomDrawer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ListTile(
+                  onTap: () {},
                   title: CustomText(
                       text: MyStrings.userProfile,
                       size: 12,
@@ -46,6 +47,7 @@ class CustomDrawer extends StatelessWidget {
                 ),
                 Divider(),
                 ListTile(
+                  onTap: () {},
                   title: CustomText(
                       text: MyStrings.aboutTec,
                       size: 12,
@@ -54,6 +56,7 @@ class CustomDrawer extends StatelessWidget {
                 ),
                 Divider(),
                 ListTile(
+                  onTap: () {},
                   title: CustomText(
                       text: MyStrings.shareTec,
                       size: 12,
@@ -62,6 +65,7 @@ class CustomDrawer extends StatelessWidget {
                 ),
                 Divider(),
                 ListTile(
+                  onTap: () {},
                   title: CustomText(
                       text: MyStrings.tecIngithub,
                       size: 12,
