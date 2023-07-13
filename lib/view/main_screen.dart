@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:tech_blog/constant/my_colors.dart';
 import 'package:tech_blog/gen/assets.gen.dart';
 import 'package:tech_blog/view/profile_screen.dart';
 import 'package:tech_blog/view/register_intro_.dart';
 import 'package:tech_blog/widgets/custom_drawer.dart';
 
+import '../components/my_colors.dart';
 import '../widgets/btn_nav_bar.dart';
 import 'home_screen.dart';
 
@@ -16,16 +16,17 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => _MainScreenState();
 }
 
+// _key is used to save the state of the drawer and open it, using the related icon
 final GlobalKey<ScaffoldState> _key = GlobalKey();
 
 class _MainScreenState extends State<MainScreen> {
   int selectedIndex = 0;
 
+//callback action to handle the index changes of the bottom navigation bar items.
   void handleIndexChanged(int newIndex) {
     setState(() {
       selectedIndex = newIndex;
     });
-    // Perform any additional logic or actions based on the new index
   }
 
   @override

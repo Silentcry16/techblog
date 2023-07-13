@@ -5,11 +5,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:validators/validators.dart';
 
-import 'package:tech_blog/constant/my_colors.dart';
-import 'package:tech_blog/constant/my_strings.dart';
 import 'package:tech_blog/gen/assets.gen.dart';
 import 'package:tech_blog/widgets/custom_text.dart';
 import '../components/dimens.dart';
+import '../components/my_colors.dart';
+import '../components/my_strings.dart';
 
 // ignore: must_be_immutable
 class RegisterIntro extends StatefulWidget {

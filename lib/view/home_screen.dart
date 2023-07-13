@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'package:tech_blog/constant/my_strings.dart';
 import 'package:tech_blog/gen/assets.gen.dart';
 import 'package:tech_blog/widgets/podcast_post.dart';
 
 import '../components/dimens.dart';
+import '../components/my_strings.dart';
 import '../widgets/blog_post_list.dart';
 import '../widgets/custom_poster.dart';
 import '../widgets/hashtag_list_view.dart';

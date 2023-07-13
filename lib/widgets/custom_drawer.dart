@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../constant/my_colors.dart';
-import '../constant/my_strings.dart';
+import '../components/my_colors.dart';
+import '../components/my_strings.dart';
 import '../gen/assets.gen.dart';
 import 'custom_text.dart';
 

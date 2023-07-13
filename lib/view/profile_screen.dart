@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:tech_blog/constant/my_colors.dart';
 
-import 'package:tech_blog/constant/my_strings.dart';
 import 'package:tech_blog/gen/assets.gen.dart';
 import 'package:tech_blog/widgets/custom_text.dart';
 
+import '../components/my_colors.dart';
+import '../components/my_strings.dart';
 import '../widgets/icon_title.dart';
 import '../widgets/my_divider.dart';
 
@@ -27,17 +27,10 @@ class ProfileScreen extends StatelessWidget {
         children: [
           Container(
             decoration: const BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                      blurRadius: 2,
-                      color: Colors.black12,
-                      offset: Offset(0, 0))
-                ],
-                color: SolidColors.scaffoldBg,
                 borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(95),
-                  bottomLeft: Radius.circular(95),
-                )),
+              bottomRight: Radius.circular(95),
+              bottomLeft: Radius.circular(95),
+            )),
             height: size.height / 4,
             child: Column(
               children: [

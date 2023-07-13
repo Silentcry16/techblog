@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
 import 'package:tech_blog/gen/assets.gen.dart';
 import 'package:tech_blog/model/fake_data.dart';
-import 'package:tech_blog/model/hashtag_model.dart';
 
-import '../constant/my_colors.dart';
-import '../constant/my_strings.dart';
+import '../components/my_colors.dart';
+import '../components/my_strings.dart';
 import '../widgets/custom_text.dart';
 
 class MyCats extends StatefulWidget {
