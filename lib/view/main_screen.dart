@@ -1,4 +1,7 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import 'package:tech_blog/gen/assets.gen.dart';
 import 'package:tech_blog/view/profile_screen.dart';
 import 'package:tech_blog/view/register_intro_.dart';
@@ -9,26 +12,12 @@ import '../widgets/btn_nav_bar.dart';
 import 'home_screen.dart';
 
 // ignore: must_be_immutable
-class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+class MainScreen extends StatelessWidget {
+  RxInt selectedIndex = 0.obs;
 
-  @override
-  State<MainScreen> createState() => _MainScreenState();
-}
+  final GlobalKey<ScaffoldState> _key = GlobalKey();
 
-// _key is used to save the state of the drawer and open it, using the related icon
-final GlobalKey<ScaffoldState> _key = GlobalKey();
-
-class _MainScreenState extends State<MainScreen> {
-  int selectedIndex = 0;
-
-//callback action to handle the index changes of the bottom navigation bar items.
-  void handleIndexChanged(int newIndex) {
-    setState(() {
-      selectedIndex = newIndex;
-    });
-  }
-
+  MainScreen({super.key});
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.sizeOf(context);
@@ -60,13 +49,16 @@ class _MainScreenState extends State<MainScreen> {
       // drawer: CustomDrawer(size: size),
       body: Stack(
         children: [
-          IndexedStack(
-            index: selectedIndex,
-            children: [
-              HomeScreen(size: size, bodyMargin: bodyMargin),
-              ProfileScreen(size: size, bodyMargin: bodyMargin),
-              RegisterIntro()
-            ],
+          //using Obx to reflect the changes on the screen
+          Obx(
+            () => IndexedStack(
+              index: selectedIndex.value,
+              children: [
+                HomeScreen(size: size, bodyMargin: bodyMargin),
+                ProfileScreen(size: size, bodyMargin: bodyMargin),
+                const RegisterIntro()
+              ],
+            ),
           ),
           Positioned(
             bottom: 8,
@@ -74,7 +66,6 @@ class _MainScreenState extends State<MainScreen> {
             right: 0,
             child: BtnNavBar(
               selectedIndex: selectedIndex,
-              onIndexChanged: handleIndexChanged,
               size: size,
               bodyMargin: bodyMargin,
             ),

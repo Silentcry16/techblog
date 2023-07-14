@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../components/my_colors.dart';
 import '../gen/assets.gen.dart';
@@ -10,14 +11,11 @@ class BtnNavBar extends StatefulWidget {
     required this.size,
     required this.bodyMargin,
     required this.selectedIndex,
-    required this.onIndexChanged,
   });
 
   final Size size;
   final double bodyMargin;
-  int selectedIndex;
-  final Function(int) onIndexChanged;
-
+  RxInt selectedIndex;
   @override
   State<BtnNavBar> createState() => _BtnNavBarState();
 }
@@ -50,9 +48,8 @@ class _BtnNavBarState extends State<BtnNavBar> {
                 child: IconButton(
                     onPressed: () {
                       setState(() {
-                        widget.selectedIndex = IndexList.homeIndex;
+                        widget.selectedIndex.value = IndexList.homeIndex;
                       });
-                      widget.onIndexChanged(widget.selectedIndex);
                     },
                     icon: ImageIcon(
                       AssetImage(Assets.icons.home.path),
@@ -63,9 +60,8 @@ class _BtnNavBarState extends State<BtnNavBar> {
                 child: IconButton(
                     onPressed: () {
                       setState(() {
-                        widget.selectedIndex = IndexList.newPostIndex;
+                        widget.selectedIndex.value = IndexList.newPostIndex;
                       });
-                      widget.onIndexChanged(widget.selectedIndex);
                     },
                     icon: ImageIcon(
                       AssetImage(Assets.icons.write.path),
@@ -76,9 +72,8 @@ class _BtnNavBarState extends State<BtnNavBar> {
                 child: IconButton(
                     onPressed: () {
                       setState(() {
-                        widget.selectedIndex = IndexList.profileIndex;
+                        widget.selectedIndex.value = IndexList.profileIndex;
                       });
-                      widget.onIndexChanged(widget.selectedIndex);
                     },
                     icon: ImageIcon(
                       AssetImage(Assets.icons.user.path),

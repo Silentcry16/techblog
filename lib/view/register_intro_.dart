@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -13,7 +12,7 @@ import '../components/my_strings.dart';
 
 // ignore: must_be_immutable
 class RegisterIntro extends StatefulWidget {
-  RegisterIntro({super.key});
+  const RegisterIntro({super.key});
 
   @override
   State<RegisterIntro> createState() => _RegisterIntroState();
@@ -34,7 +33,7 @@ class _RegisterIntroState extends State<RegisterIntro> {
           padding:
               EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
           child: Container(
-            padding: EdgeInsets.all(24),
+            padding: const EdgeInsets.all(24),
             height: size.height / 2.8,
             child: Column(
               children: [
@@ -102,7 +101,7 @@ class _RegisterIntroState extends State<RegisterIntro> {
           padding:
               EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
           child: Container(
-            padding: EdgeInsets.all(24),
+            padding: const EdgeInsets.all(24),
             height: size.height / 3,
             child: Column(
               children: [
@@ -154,7 +153,6 @@ class _RegisterIntroState extends State<RegisterIntro> {
 
   @override
   Widget build(BuildContext context) {
-    var size = Get.size;
     return Scaffold(
         body: Center(
       child: Column(

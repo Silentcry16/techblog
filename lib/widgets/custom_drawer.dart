@@ -45,7 +45,7 @@ class CustomDrawer extends StatelessWidget {
                       textColor: SolidColors.blackColor,
                       weight: FontWeight.bold),
                 ),
-                Divider(),
+                const Divider(),
                 ListTile(
                   onTap: () {},
                   title: CustomText(
@@ -54,7 +54,7 @@ class CustomDrawer extends StatelessWidget {
                       textColor: SolidColors.blackColor,
                       weight: FontWeight.bold),
                 ),
-                Divider(),
+                const Divider(),
                 ListTile(
                   onTap: () {},
                   title: CustomText(
@@ -63,7 +63,7 @@ class CustomDrawer extends StatelessWidget {
                       textColor: SolidColors.blackColor,
                       weight: FontWeight.bold),
                 ),
-                Divider(),
+                const Divider(),
                 ListTile(
                   onTap: () {},
                   title: CustomText(
