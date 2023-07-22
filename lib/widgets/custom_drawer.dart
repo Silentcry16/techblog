@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:tech_blog/components/my_components.dart';
 
 import '../components/my_colors.dart';
 import '../components/my_strings.dart';
@@ -38,7 +40,7 @@ class CustomDrawer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ListTile(
-                  onTap: () {},
+                  onTap: () async {},
                   title: CustomText(
                       text: MyStrings.userProfile,
                       size: 12,
@@ -56,7 +58,9 @@ class CustomDrawer extends StatelessWidget {
                 ),
                 const Divider(),
                 ListTile(
-                  onTap: () {},
+                  onTap: () async {
+                    await Share.share(MyStrings.shareText);
+                  },
                   title: CustomText(
                       text: MyStrings.shareTec,
                       size: 12,
@@ -65,7 +69,8 @@ class CustomDrawer extends StatelessWidget {
                 ),
                 const Divider(),
                 ListTile(
-                  onTap: () {},
+                  onTap: () => MyComponents.openUrl(
+                      url: 'https://github.com/boustani-dev/techblog'),
                   title: CustomText(
                       text: MyStrings.tecIngithub,
                       size: 12,
