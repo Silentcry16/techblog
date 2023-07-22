@@ -8,7 +8,7 @@ import 'components/my_colors.dart';
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: SolidColors.statusBarColor,
-    statusBarIconBrightness: Brightness.dark,
+    statusBarIconBrightness: Brightness.dark, 
     systemNavigationBarColor: SolidColors.systemNavigationBarColor,
     systemNavigationBarIconBrightness: Brightness.dark,
   ));
