@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tech_blog/gen/assets.gen.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:tech_blog/view/main_screen.dart';
+import 'package:tech_blog/widgets/loading_kit.dart';
 
 import '../components/my_colors.dart';
 
@@ -33,10 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Image.asset(Assets.images.logo.path, height: 64),
             const SizedBox(height: 33),
-            const SpinKitThreeBounce(
-              color: SolidColors.primaryColor,
-              size: 32.0,
-            )
+            const LoadingKit(),
           ],
         ),
       ),

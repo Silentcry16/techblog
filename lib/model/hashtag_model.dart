@@ -1,7 +1,14 @@
-class HashtagModel {
-  final String title;
+class TagsModel {
+  String? id;
+  String? title;
 
-  HashtagModel({required this.title});
+  TagsModel({
+    this.id,
+    this.title,
+  });
 
-
+  TagsModel.fromJson(Map<String, dynamic> element) {
+    id = element["id"];
+    title = element["title"];
+  }
 }

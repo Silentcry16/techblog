@@ -4,11 +4,13 @@ import 'package:get/get.dart';
 import 'package:tech_blog/view/main_screen.dart';
 
 import 'components/my_colors.dart';
+import 'controller/home_screen_controller.dart';
 
 void main() {
+  Get.put(HomeScreenController());
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: SolidColors.statusBarColor,
-    statusBarIconBrightness: Brightness.dark, 
+    statusBarIconBrightness: Brightness.dark,
     systemNavigationBarColor: SolidColors.systemNavigationBarColor,
     systemNavigationBarIconBrightness: Brightness.dark,
   ));

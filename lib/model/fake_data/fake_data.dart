@@ -1,7 +1,7 @@
 import 'package:tech_blog/gen/assets.gen.dart';
 
-import 'blog_model.dart';
-import 'hashtag_model.dart';
+import '../blog_model.dart';
+import '../hashtag_model.dart';
 
 // ignore: non_constant_identifier_names
 Map HomePagePosterMap = {
@@ -14,19 +14,19 @@ Map HomePagePosterMap = {
 
 //Hastags fake data
 
-List<HashtagModel> hashtagData = [
-  HashtagModel(title: 'برنامه‌نویسی'),
-  HashtagModel(title: 'کدنویسی'),
-  HashtagModel(title: 'طراحی وب'),
-  HashtagModel(title: 'پایتون'),
-  HashtagModel(title: 'جاوااسکریپت'),
-  HashtagModel(title: 'موبایل اپلیکیشن'),
-  HashtagModel(title: 'بلاکچین'),
-  HashtagModel(title: 'هوش مصنوعی'),
-  HashtagModel(title: 'تست نرم‌افزار'),
-  HashtagModel(title: 'بانک‌های اطلاعاتی'),
+List<TagsModel> hashtagData = [
+  TagsModel(title: 'برنامه‌نویسی'),
+  TagsModel(title: 'کدنویسی'),
+  TagsModel(title: 'طراحی وب'),
+  TagsModel(title: 'پایتون'),
+  TagsModel(title: 'جاوااسکریپت'),
+  TagsModel(title: 'موبایل اپلیکیشن'),
+  TagsModel(title: 'بلاکچین'),
+  TagsModel(title: 'هوش مصنوعی'),
+  TagsModel(title: 'تست نرم‌افزار'),
+  TagsModel(title: 'بانک‌های اطلاعاتی'),
 ];
-List<HashtagModel> myCats = [];
+List<TagsModel> myCats = [];
 
 //List of blogs
 List<BlogModel> blogList = [

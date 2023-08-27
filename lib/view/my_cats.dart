@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tech_blog/gen/assets.gen.dart';
-import 'package:tech_blog/model/fake_data.dart';
+import 'package:tech_blog/model/fake_data/fake_data.dart';
 
 import '../components/my_colors.dart';
 import '../components/my_strings.dart';
@@ -124,7 +124,7 @@ class _MyCatsState extends State<MyCats> {
                                           textColor: SolidColors.lightText,
                                           weight: FontWeight.bold),
                                       CustomText(
-                                          text: hashtagData[index].title,
+                                          text: hashtagData[index].title!,
                                           size: 12,
                                           textColor: SolidColors.lightText,
                                           weight: FontWeight.bold),
@@ -179,7 +179,7 @@ class _MyCatsState extends State<MyCats> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   CustomText(
-                                      text: myCats[index].title,
+                                      text: myCats[index].title!,
                                       size: 12,
                                       textColor: SolidColors.blackColor,
                                       weight: FontWeight.bold),
